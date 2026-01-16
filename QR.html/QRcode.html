@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Códigos QR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Generador de Códigos QR</h1>
+        
+        <div class="input-section">
+            <label for="text-input">Ingresa texto o URL:</label>
+            <textarea 
+                id="text-input" 
+                placeholder="Escribe aquí el texto o URL que quieres convertir a QR..."
+                rows="4"
+            ></textarea>
+            
+            <div class="controls">
+                <label for="qr-size">Tamaño del QR:</label>
+                <select id="qr-size">
+                    <option value="128">128x128</option>
+                    <option value="256" selected>256x256</option>
+                    <option value="384">384x384</option>
+                    <option value="512">512x512</option>
+                </select>
+                
+                <label for="qr-color">Color:</label>
+                <input type="color" id="qr-color" value="#000000">
+                
+                <label for="bg-color">Fondo:</label>
+                <input type="color" id="bg-color" value="#ffffff">
+            </div>
+            
+            <button id="generate-btn" class="btn-primary">Generar QR</button>
+        </div>
+        
+        <div class="result-section">
+            <div id="qr-container"></div>
+            <button id="download-btn" class="btn-secondary" style="display: none;">
+                💾 Descargar QR
+            </button>
+        </div>
+    </div>
+
+    <script src="qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
